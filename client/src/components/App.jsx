@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import NavBar from './NavBar.jsx';
 
-const App = ({ message = 'Hello React!' }) => (
+const App = () => (
   <div>
     <NavBar />
   </div>
-)
+);
 
-export default App
+export default App;
