@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/webpack-dev-server --content-base ./client/dist --inline --hot"
+    "test": "jest",
+    "start": "webpack-dev-server --content-base ./client/dist",
+    "start:dev": "./node_modules/.bin/webpack-dev-server --content-base ./client/dist --inline --hot"
   },
   "keywords": [],
   "author": "",
@@ -17,12 +18,16 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "file-loader": "^0.11.1",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
