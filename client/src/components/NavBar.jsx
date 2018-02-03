@@ -148,7 +148,7 @@ const NavBar = () => {
         <Link>TEAM</Link>
         <Link>COMPANY</Link>
         <DisplaySpan>
-          <DisplayPicture alt="User Icon" src={require('../images/userIcon.png')} />
+          <DisplayPicture alt="userIcon" src="https://thumb.ibb.co/ijbPW6/userIcon.png" />
           {UserMenu}
         </DisplaySpan>
       </Menu>
