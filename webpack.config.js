@@ -16,19 +16,19 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader']
+        loaders: ['babel-loader'],
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader',
       },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
-          limit: 10000
-        }
-      }
-    ]
-  }
-}
+          limit: 10000,
+        },
+      },
+    ],
+  },
+};
