@@ -55,7 +55,7 @@ const Popover = styled.span`
 `;
 
 const PopoverWrapper = styled.div`
-  display: block;
+  display: none;
   position: absolute;
   margin-left: -7.7em;
 
