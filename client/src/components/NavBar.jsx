@@ -55,7 +55,7 @@ const Popover = styled.span`
 `;
 
 const PopoverWrapper = styled.div`
-  display: none;
+  display: block;
   position: absolute;
   margin-left: -7.7em;
 
@@ -122,7 +122,7 @@ const ListItem = styled.li`
 
   &:hover {
     background-color: #d3d2d3;
-    border: 0.07em solid #eaeaea; 
+    border: 0.07em solid #d3d2d3; 
   }
 `;
 
