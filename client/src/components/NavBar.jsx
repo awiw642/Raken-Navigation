@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Popover } from 'react-bootstrap';
 
 const NavWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 25%);
   border: 1px solid #eaeaea;
-  padding: 1em;
   background-color: #f7f7f7;
   margin-top: 1em;
   justify-items: end;
@@ -36,30 +34,42 @@ const Link = styled.a`
   color: #7f7979;
 `;
 
+const Popover = styled.span`
+  position: absolute;
+  transform: translate(0,10px);
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+  width: 13em;
+
+  &:before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    right: calc(100% - 11em);
+    top: -0.7em;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #ffffff transparent;
+  }
+`;
+
 const PopoverWrapper = styled.div`
   display: none;
   position: absolute;
-  margin-left: 21em;
+  margin-left: -7.7em;
 
   &:hover {
     display: block;
   }
-  @media (max-width: 1240px) {
-    margin-left: 20em;
-  }
 `;
 
 const DisplayPicture = styled.img`
-  width: 4em;
-  @media (max-width: 1240px) {
-    width: 2em;
-  }
-  @media (max-width: 935px) {
-    width: 1.5em;
-  }
+  width: 5em;
 `;
 
-const DisplaySpan = styled.span`
+const DisplayDiv = styled.div`
+  display: inline-block;
   margin-left: 2em;
   padding: 1em;
   border-left: 1px solid #eaeaea;
@@ -67,23 +77,23 @@ const DisplaySpan = styled.span`
   & ${DisplayPicture}:hover + ${PopoverWrapper} {
     display: block;
   }
+
+  @media (max-width: 640px) {
+    border: none;
+  }
 `;
 
 const NavHeader = styled.div`
   justify-self: start;
   align-self: center;
-  margin-bottom: 0.6em;
+  margin-bottom: 0;
   font-family: roboto;
   font-size: 1.2em;
   color: #7f7979;
-
-  @media (max-width: 1240px) {
-    margin-bottom: 0;
-  }
+  margin-left: 1em;
 
   @media (max-width: 640px) {
     grid-column: 1/5;
-    margin-bottom: 1.1em;
     justify-self: center;
   }
 `;
@@ -92,13 +102,24 @@ const List = styled.ul`
   font-family: roboto;
   list-style-type: none;
   padding: 0;
-  width: 11em;
+  margin: 0;
+  width: 100%;
 `;
 
 const ListItem = styled.li`
   padding: 1em;
-  border-bottom: 1px solid #eaeaea;
   font-size: 0.9em;
+
+  &:after {
+    position: relative;
+    top: 1.04em;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background: #eaeaea;
+  }
+
   &:hover {
     background-color: #d3d2d3;
   }
@@ -117,7 +138,7 @@ const DisplayNumber = styled.div`
 const NavBar = () => {
   const UserMenu = (
     <PopoverWrapper>
-      <Popover id="userMenu" placement="bottom" arrowOffsetLeft={140} cellPadding={0}>
+      <Popover>
         <List>
           <ListItem>MY PROFILE</ListItem>
           <ListItem>
@@ -147,10 +168,10 @@ const NavBar = () => {
         <Link>PROJECTS</Link>
         <Link>TEAM</Link>
         <Link>COMPANY</Link>
-        <DisplaySpan>
-          <DisplayPicture alt="userIcon" src="https://thumb.ibb.co/ijbPW6/userIcon.png" />
+        <DisplayDiv>
+          <DisplayPicture alt="userIcon" src="https://thumb.ibb.co/di8Vdx/userIcon.png" />
           {UserMenu}
-        </DisplaySpan>
+        </DisplayDiv>
       </Menu>
     </NavWrapper>
   );
