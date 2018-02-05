@@ -112,17 +112,17 @@ const ListItem = styled.li`
 
   &:after {
     position: relative;
-    top: 1.08em;
+    top: 1.05em;
     content: '';
     display: block;
     width: 100%;
-    height: 0.06em;
-    background: #eaeaea;
+    height: 0.07em;
+    background: #d3d2d3;
   }
 
   &:hover {
     background-color: #d3d2d3;
-    border: 0.07em solid #d3d2d3; 
+    border: 0.05em solid #d3d2d3;
   }
 `;
 
